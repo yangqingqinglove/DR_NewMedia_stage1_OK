@@ -17,6 +17,9 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 
+@property(nonatomic,strong)UISearchBar * searchBar;
+
+
 /// 记录当前的bnt 的选中状态
 @property(nonatomic,strong)UIButton * currentButton;
 
@@ -67,7 +70,7 @@
     [search setPlaceholder:@"搜你关注的内容或圈友"];
     search.tintColor = [UIColor grayColor];
     search.delegate = self;
-//    UIBarButtonItem * imageItem = [[UIBarButtonItem alloc]initWithCustomView:search];
+    self.searchBar = search;
     self.navigationItem.titleView = search;
 
     // 8.接受通知
@@ -153,6 +156,7 @@
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
     
+    
     // 获得当前需要显示的子控制器索引
     NSUInteger index = scrollView.contentOffset.x / scrollView.frame.size.width;
     UIViewController *vc = self.childViewControllers[index];
@@ -181,30 +185,66 @@
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    //解决跳转详情键盘 不回收bug
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.showsSearchResultsButton = NO;
+    [self.searchBar resignFirstResponder];
+    [self.searchBar endEditing:YES];
+    
     [self scrollViewDidEndScrollingAnimation:scrollView];
 }
 
 #pragma mark - navBarClick的方法
--(void)rightBarButtonClicked:(UIButton *)rightBnt{//其他的功能的设置
+-(void)rightBarButtonClicked:(UIButton *)rightBnt{//add添加功能的设置
 
 
 }
 
--(void)right1BarButtonClicked:(UIButton *)right1Bnt{//继承的友盟 分享
-
-
-}
 
 #pragma mark - searchBar的代理方法
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     //默认置为nil
     searchBar.text = nil;
-    
+    searchBar.showsCancelButton = YES;
+    searchBar.showsSearchResultsButton = YES;
 
 }
 
+
+// called when keyboard search button pressed
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    //按下keyboard的时候
+    searchBar.text = nil;
+    [searchBar endEditing:YES];//回收键盘
+    searchBar.showsCancelButton = NO;
+    searchBar.showsSearchResultsButton = NO;
+    [searchBar resignFirstResponder];
+    
+}
+
+
+- (void)searchBarBookmarkButtonClicked:(UISearchBar *)searchBar{
+    
+    //按下标签页的 search的时候
+    [searchBar resignFirstResponder];
+    searchBar.showsCancelButton = NO;
+    searchBar.showsSearchResultsButton = NO;
+    
+}
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    
+    searchBar.text = @"";
+    searchBar.showsCancelButton = NO;
+    searchBar.showsSearchResultsButton = NO;
+    [searchBar resignFirstResponder];//取消第一响应者的
+    
+}
+
 #pragma mark - 接受所有通知的方法
--(void)abserverAllNoties{
+- (void)abserverAllNoties{
 
     [YQNoteCenter addObserver:self selector:@selector(pushDetailView) name:YQContentTabelViewClicked object:nil];
 
@@ -214,7 +254,11 @@
 -(void)pushDetailView{
     
     //解决跳转详情键盘 不回收bug
-    [self.view endEditing:YES];
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.showsSearchResultsButton = NO;
+    [self.searchBar resignFirstResponder];
+    [self.searchBar endEditing:YES];
+    
     
     UIStoryboard * sb = [UIStoryboard storyboardWithName:@"YQHotDetail" bundle:nil];
     UIViewController * vc = [sb instantiateInitialViewController];

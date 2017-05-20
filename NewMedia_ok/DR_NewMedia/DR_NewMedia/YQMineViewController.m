@@ -79,6 +79,9 @@
         [self.mineHeadView.headImageView sd_setImageWithURL:[[NSUserDefaults standardUserDefaults] objectForKey:UserIconurl] placeholderImage:nil];
         self.mineHeadView.titleLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:UserNickName];
         
+        /// 改变的登录的状态:
+        self.isLogin = isFristLogin;
+        
     }
 
 }
