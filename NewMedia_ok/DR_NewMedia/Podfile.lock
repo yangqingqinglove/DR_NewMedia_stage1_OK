@@ -1,0 +1,47 @@
+PODS:
+  - LBXScan/LBXZXing (2.0)
+  - LBXScan/UI (2.0)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - UMengUShare/Core (6.4.4):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.4)
+  - UMengUShare/Social/AlipayShare (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/Douban (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedQQ (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/UI (6.4.4):
+    - UMengUShare/Core
+
+DEPENDENCIES:
+  - LBXScan/LBXZXing (~> 2.0)
+  - LBXScan/UI (~> 2.0)
+  - Masonry
+  - MBProgressHUD
+  - SDWebImage
+  - UMengUShare/Social/AlipayShare
+  - UMengUShare/Social/Douban
+  - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedSina
+  - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI
+
+SPEC CHECKSUMS:
+  LBXScan: 458f4b7a6688504a1415dc4a0f9822100e099f66
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  UMengUShare: cd54ae52958426b79aa9193a7b02058d6a6d9aa0
+
+PODFILE CHECKSUM: 0ccd779aab000c3b9ac9fc41568c6602c7b7d69d
+
+COCOAPODS: 1.2.1

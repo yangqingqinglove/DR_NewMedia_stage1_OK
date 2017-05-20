@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s5t-X1-gcU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Historical FootprintVC-->
+        <scene sceneID="aJa-Js-sKz">
+            <objects>
+                <viewController id="s5t-X1-gcU" customClass="YQHistoricalFootprintVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vi9-EO-gvb"/>
+                        <viewControllerLayoutGuide type="bottom" id="kbl-O0-Wah"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jua-A5-w9v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QZ-eK-hHH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="TzB-Jp-hjR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-bj-QdM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwp-nv-W8W">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="K47-OZ-rHX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="阅读足迹">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="readButtonClicked:" destination="s5t-X1-gcU" eventType="touchUpInside" id="SAJ-Gr-RnH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psF-BM-phZ">
+                                        <rect key="frame" x="90" y="0.0" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="p0Q-la-B3R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="分享足迹">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButtonClicked:" destination="s5t-X1-gcU" eventType="touchUpInside" id="pUe-we-7Rs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Cck-dX-9h3"/>
+                                    <constraint firstItem="Dwp-nv-W8W" firstAttribute="top" secondItem="5Uk-bj-QdM" secondAttribute="top" id="SYJ-Uv-Ghz"/>
+                                    <constraint firstItem="psF-BM-phZ" firstAttribute="top" secondItem="5Uk-bj-QdM" secondAttribute="top" id="eQR-hh-HTN"/>
+                                    <constraint firstItem="psF-BM-phZ" firstAttribute="leading" secondItem="Dwp-nv-W8W" secondAttribute="trailing" id="jHr-yf-8X9"/>
+                                    <constraint firstItem="Dwp-nv-W8W" firstAttribute="leading" secondItem="5Uk-bj-QdM" secondAttribute="leading" id="qtD-34-VAi"/>
+                                    <constraint firstAttribute="bottom" secondItem="psF-BM-phZ" secondAttribute="bottom" id="v9E-uK-1SE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dwp-nv-W8W" secondAttribute="bottom" id="vee-jO-49I"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2g-Z6-8j5">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s5t-X1-gcU" id="cLg-Om-Uuu"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l2g-Z6-8j5" firstAttribute="leading" secondItem="Jua-A5-w9v" secondAttribute="leading" id="2sG-xr-xyU"/>
+                            <constraint firstItem="kbl-O0-Wah" firstAttribute="top" secondItem="l2g-Z6-8j5" secondAttribute="bottom" id="CbS-GJ-Fvi"/>
+                            <constraint firstAttribute="trailing" secondItem="l2g-Z6-8j5" secondAttribute="trailing" id="Mu8-3A-R21"/>
+                            <constraint firstItem="5Uk-bj-QdM" firstAttribute="leading" secondItem="Jua-A5-w9v" secondAttribute="leading" id="PmV-hN-JM8"/>
+                            <constraint firstItem="l2g-Z6-8j5" firstAttribute="top" secondItem="5Uk-bj-QdM" secondAttribute="bottom" id="PyK-mE-wnW"/>
+                            <constraint firstItem="0QZ-eK-hHH" firstAttribute="leading" secondItem="Jua-A5-w9v" secondAttribute="leading" id="XX3-Wi-yQW"/>
+                            <constraint firstItem="5Uk-bj-QdM" firstAttribute="top" secondItem="0QZ-eK-hHH" secondAttribute="bottom" id="k8w-rX-X72"/>
+                            <constraint firstAttribute="trailing" secondItem="0QZ-eK-hHH" secondAttribute="trailing" id="kTe-iJ-imz"/>
+                            <constraint firstItem="0QZ-eK-hHH" firstAttribute="top" secondItem="Jua-A5-w9v" secondAttribute="top" id="rxy-9i-hRs"/>
+                            <constraint firstAttribute="trailing" secondItem="5Uk-bj-QdM" secondAttribute="trailing" id="tfh-L3-1Eb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentScrollView" destination="l2g-Z6-8j5" id="VF3-DY-fuz"/>
+                        <outlet property="readButton" destination="Dwp-nv-W8W" id="bK1-EJ-VhX"/>
+                        <outlet property="shareButton" destination="psF-BM-phZ" id="XcD-wu-lxU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9N-ea-maZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-801" y="1015"/>
+        </scene>
+    </scenes>
+</document>

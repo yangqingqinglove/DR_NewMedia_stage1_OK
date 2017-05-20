@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="oMX-8C-Mre" customClass="YQTopView">
+            <rect key="frame" x="0.0" y="0.0" width="111" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-fE-nhm">
+                    <rect key="frame" x="56" y="53.5" width="50" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="c3R-au-fMH"/>
+                        <constraint firstAttribute="width" constant="50" id="c4g-4w-67A"/>
+                    </constraints>
+                    <state key="normal" image="006gzoff"/>
+                    <state key="selected" image="006gzon"/>
+                    <state key="highlighted" image="006gzon"/>
+                    <connections>
+                        <action selector="collectButtonClick:" destination="-1" eventType="touchUpInside" id="oWK-qX-Gtj"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-lr-M3X">
+                    <rect key="frame" x="111" y="48.5" width="60" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="4Oh-A8-NoA"/>
+                        <constraint firstAttribute="width" constant="60" id="zcr-Bd-nQ6"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Axq-lr-M3X" firstAttribute="leading" secondItem="1WL-fE-nhm" secondAttribute="trailing" constant="5" id="MKh-HA-tVx"/>
+                <constraint firstAttribute="trailing" secondItem="1WL-fE-nhm" secondAttribute="trailing" constant="5" id="Wm1-dE-0ng"/>
+                <constraint firstItem="1WL-fE-nhm" firstAttribute="centerY" secondItem="oMX-8C-Mre" secondAttribute="centerY" id="h7l-8S-TFH"/>
+                <constraint firstItem="Axq-lr-M3X" firstAttribute="centerY" secondItem="oMX-8C-Mre" secondAttribute="centerY" id="tp1-Sv-qRS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backImageView" destination="Axq-lr-M3X" id="kPR-Xg-qz7"/>
+                <outlet property="collectionImageVIEW" destination="1WL-fE-nhm" id="xhk-mg-jmw"/>
+            </connections>
+            <point key="canvasLocation" x="-11.5" y="-463.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="006gzoff" width="75" height="36"/>
+        <image name="006gzon" width="75" height="36"/>
+    </resources>
+</document>
