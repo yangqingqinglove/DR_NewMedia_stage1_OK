@@ -240,11 +240,10 @@
     self.lastIndex += index;
     self.firstPoint = pointBegan;
     
-    if(self.lastIndex >= pictureFrames){//解决逻辑bug
-        self.lastIndex =0;
+    if(self.lastIndex >= pictureFrames -1){//解决逻辑bug
+        self.lastIndex =self.lastIndex - pictureFrames +1;
     }
 }
-
 
 
 #pragma mark --------pan添加手势方法------
